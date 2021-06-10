@@ -1,5 +1,6 @@
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 
@@ -12,10 +13,10 @@ public class GeekMarketWinterApplication implements CommandLineRunner {
 		SpringApplication.run(GeekMarketWinterApplication.class, args);
 	}
 
-	private FileMetaProvider fileMetaProvider;
+	private FileMetaProvider provider;
 
-	public GeekMarketWinterApplication(FileMetaProvider fileMetaProvider) {
-		this.fileMetaProvider = fileMetaProvider;
+	public GeekMarketWinterApplication(@Autowired FileMetaProvider provider) {
+		this.provider = provider;
 	}
 
 	@Override
